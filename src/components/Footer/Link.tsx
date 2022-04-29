@@ -14,7 +14,7 @@ interface Props extends LinkProps {
 function Link({ icon, href }: Props) {
   return (
     <NextLink href={href} passHref>
-      <ChakraLink as={'a'} target="_blank">
+      <ChakraLink as="a" target="_blank">
         <Icon as={icon} fontSize="35px" color="brown.700" _hover={{ color: beige }} />
       </ChakraLink>
     </NextLink>
