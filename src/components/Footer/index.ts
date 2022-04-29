@@ -1,0 +1,5 @@
+export * from './Footer'
+export * from './Form'
+export * from './Link'
+export * from './Title'
+export * from './Photo'
