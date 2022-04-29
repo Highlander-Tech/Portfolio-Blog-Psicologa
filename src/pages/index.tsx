@@ -1,25 +1,21 @@
-import { Flex, Link, Image, Heading, Text, Button, Box, UnorderedList, ListItem } from "@chakra-ui/react"
-import { useState, useEffect } from "react"
-import { GetStaticProps } from "next"
-import { getPrismicClient } from "../services/prismic"
+import { Flex, Link, Image, Heading, Text, Button, Box, UnorderedList, ListItem } from '@chakra-ui/react'
+import { useState, useEffect } from 'react'
+import { GetStaticProps } from 'next'
+import { getPrismicClient } from '../services/prismic'
 import Prismic from '@prismicio/client'
 import { RichText } from 'prismic-dom'
-import { getPosts } from "../services/posts"
+import { getPosts } from '../services/posts'
 
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient()
 
-  const home = await prismic.query([
-    Prismic.Predicates.at("document.type", 'home')],
-    {
-      pageSize: 1
-    })
+  const home = await prismic.query([Prismic.Predicates.at('document.type', 'home')], {
+    pageSize: 1,
+  })
 
-  const blog = await prismic.query([
-    Prismic.Predicates.at("document.type", 'post')],
-    {
-      pageSize: 3
-    })
+  const blog = await prismic.query([Prismic.Predicates.at('document.type', 'post')], {
+    pageSize: 3,
+  })
 
   return {
     props: {
@@ -29,9 +25,9 @@ export const getStaticProps: GetStaticProps = async () => {
       facebook: home.results[0].data.facebook,
       instagram: home.results[0].data.instagram,
       telefone: home.results[0].data.telefone,
-      posts: getPosts(blog.results)
+      posts: getPosts(blog.results),
     },
-    revalidate: 60 * 60 // 1 hora
+    revalidate: 60 * 60, // 1 hora
   }
 }
 
@@ -54,84 +50,52 @@ interface HomeProps {
 }
 
 export default function Home(props: HomeProps) {
-
   const [cards, setCards] = useState([<></>])
 
   useEffect(() => {
-    setCards(props.posts.reverse().map((post: Post) => {
-      return (
-        <Box
-          key={post.id}
-          w="350px"
-          h="420px"
-          bgColor="#E9CBBB"
-        >
-          <Image
-            src={post.banner}
-            h="240px"
-            w="350px"
-            alt="Foto Perfil Monique Batista"
-          />
-          <Box
-            w="325px"
-            color="#474544"
-            fontFamily="Roboto"
-            fontStyle="normal"
-            fontWeight="normal"
-            pl="10px"
-          >
-            <Text
-              fontSize="14px"
-              lineHeight="16px"
-              mt="18px"
-            >
-              Publicado em: {post.updateAt}
-
-            </Text>
-
-            <Heading
-              as="h3"
-              fontSize="24px"
-              lineHeight="32px"
-              fontWeight={500}
-              mb="10px"
-              isTruncated
-            >
-              {post.title}
-            </Heading>
-            <Text
-              fontSize="14px"
-              lineHeight="16px"
-              h="48px"
-              noOfLines={3}
-              mb="20px"
-            >
-              {post.content}
-            </Text>
-            <Link
-              href={`/blog/${post.id}`}
-              ml="110px"
-              w="110px"
-              fontSize="18px"
+    setCards(
+      props.posts.reverse().map((post: Post) => {
+        return (
+          <Box key={post.id} w="350px" h="420px" bgColor="#E9CBBB">
+            <Image src={post.banner} h="240px" w="350px" alt="Foto Perfil Monique Batista" />
+            <Box
+              w="325px"
+              color="#474544"
+              fontFamily="Roboto"
+              fontStyle="normal"
               fontWeight="normal"
-              lineHeight="24px"
+              pl="10px"
             >
-              {"Leia Mais >>"}
-            </Link>
+              <Text fontSize="14px" lineHeight="16px" mt="18px">
+                Publicado em: {post.updateAt}
+              </Text>
+
+              <Heading as="h3" fontSize="24px" lineHeight="32px" fontWeight={500} mb="10px" isTruncated>
+                {post.title}
+              </Heading>
+              <Text fontSize="14px" lineHeight="16px" h="48px" noOfLines={3} mb="20px">
+                {post.content}
+              </Text>
+              <Link
+                href={`/blog/${post.id}`}
+                ml="110px"
+                w="110px"
+                fontSize="18px"
+                fontWeight="normal"
+                lineHeight="24px"
+              >
+                {'Leia Mais >>'}
+              </Link>
+            </Box>
           </Box>
-        </Box>
-      )
-    }))
-  }, [props.posts]);
+        )
+      }),
+    )
+  }, [props.posts])
 
   return (
     <>
-      <Flex
-        mt="32px"
-        w="1210px"
-        mx="auto"
-        h="560px"
-      >
+      <Flex mt="32px" w="1210px" mx="auto" h="560px">
         <Box
           mt="20px"
           w="310px"
@@ -150,9 +114,7 @@ export default function Home(props: HomeProps) {
           mt="10px"
         />
 
-        <Box
-          ml="50px"
-        >
+        <Box ml="50px">
           <Heading
             as="h1"
             fontFamily="Cookie"
@@ -178,7 +140,9 @@ export default function Home(props: HomeProps) {
               <ListItem>Avaliação Psicológica</ListItem>
             </UnorderedList>
 
-            <Text mt="20px" ml="20px">CRP 07/29504</Text>
+            <Text mt="20px" ml="20px">
+              CRP 07/29504
+            </Text>
           </Box>
           <Button
             mt="30px"
@@ -193,7 +157,6 @@ export default function Home(props: HomeProps) {
             lineHeight="39px"
             color="#474544"
             transform="rotate(-10deg)"
-
           >
             <Box
               h="185px"
@@ -210,12 +173,7 @@ export default function Home(props: HomeProps) {
           </Button>
         </Box>
       </Flex>
-      <Box
-        h="565px"
-        w="full"
-        mx="auto"
-        bgColor="#474544"
-      >
+      <Box h="565px" w="full" mx="auto" bgColor="#474544">
         <Box
           w="765px"
           fontFamily="Roboto"
@@ -228,21 +186,21 @@ export default function Home(props: HomeProps) {
           mx="auto"
         >
           <Text mt="40px">
-            A busca pela sua própria identificação na adolescencia é uma tarefa incessante, e para tal, pode-se contar com o auxílio da terapia, posso te ajudar com a minha experiencia em clínica e agora levando isso para o on line.
+            A busca pela sua própria identificação na adolescencia é uma tarefa incessante, e para tal,
+            pode-se contar com o auxílio da terapia, posso te ajudar com a minha experiencia em clínica e
+            agora levando isso para o on line.
           </Text>
           <Text mt="21px">
-            Se você está sentindo-se perdido e sem propósito, pode contar comigo para te ajudar a compreender que tuas dúvidas e inquietaçaões fazem parte deste processo da adolescência.
+            Se você está sentindo-se perdido e sem propósito, pode contar comigo para te ajudar a compreender
+            que tuas dúvidas e inquietaçaões fazem parte deste processo da adolescência.
           </Text>
           <Text mt="21px">
-            Atuo também com família e conflitos gerados desta, ajudando as famílias em um processo de conhecimento e restauração de laços ou de harmonia para os seus integrantes.
+            Atuo também com família e conflitos gerados desta, ajudando as famílias em um processo de
+            conhecimento e restauração de laços ou de harmonia para os seus integrantes.
           </Text>
         </Box>
 
-        <Flex
-          w="710px"
-          mx="auto"
-          justifyContent="space-between"
-        >
+        <Flex w="710px" mx="auto" justifyContent="space-between">
           <Image
             src="component_1.png"
             w="671px"
@@ -293,11 +251,7 @@ export default function Home(props: HomeProps) {
           </Button>
         </Flex>
       </Box>
-      <Box
-        w="1210px"
-        h="480px"
-        mx="auto"
-      >
+      <Box w="1210px" h="480px" mx="auto">
         <Heading
           as="h2"
           mt="30px"
@@ -309,13 +263,7 @@ export default function Home(props: HomeProps) {
         >
           Como eu posso ajudar?
         </Heading>
-        <Flex
-          mt="35px"
-          mx="auto"
-          w="1210px"
-
-          justifyContent="space-evenly"
-        >
+        <Flex mt="35px" mx="auto" w="1210px" justifyContent="space-evenly">
           <Box>
             <Flex>
               <Text
@@ -330,19 +278,16 @@ export default function Home(props: HomeProps) {
               >
                 1
               </Text>
-              <Box
-                fontFamily="Roboto"
-                fontStyle="normal"
-                fontWeight="normal"
-                color="#474544"
-              >
-                <Text fontSize="18px" lineHeight="21px" mb="14px">Indentificar</Text>
-                <Text fontSize="14px" lineHeight="16px" w="300px">Identificar os motivos do problema, a essência do que está acontecendo.</Text>
+              <Box fontFamily="Roboto" fontStyle="normal" fontWeight="normal" color="#474544">
+                <Text fontSize="18px" lineHeight="21px" mb="14px">
+                  Indentificar
+                </Text>
+                <Text fontSize="14px" lineHeight="16px" w="300px">
+                  Identificar os motivos do problema, a essência do que está acontecendo.
+                </Text>
               </Box>
             </Flex>
-            <Flex
-              mt="35px"
-            >
+            <Flex mt="35px">
               <Text
                 fontFamily="Cormorant Garamond"
                 fontSize="72px"
@@ -355,19 +300,16 @@ export default function Home(props: HomeProps) {
               >
                 2
               </Text>
-              <Box
-                fontFamily="Roboto"
-                fontStyle="normal"
-                fontWeight="normal"
-                color="#474544"
-              >
-                <Text fontSize="18px" lineHeight="21px" mb="14px">Entender os Outros</Text>
-                <Text fontSize="14px" lineHeight="16px" w="300px">Descobrir como lidar com os fatores externos, e como responder adequadamente.</Text>
+              <Box fontFamily="Roboto" fontStyle="normal" fontWeight="normal" color="#474544">
+                <Text fontSize="18px" lineHeight="21px" mb="14px">
+                  Entender os Outros
+                </Text>
+                <Text fontSize="14px" lineHeight="16px" w="300px">
+                  Descobrir como lidar com os fatores externos, e como responder adequadamente.
+                </Text>
               </Box>
             </Flex>
-            <Flex
-              mt="35px"
-            >
+            <Flex mt="35px">
               <Text
                 fontFamily="Cormorant Garamond"
                 fontSize="72px"
@@ -380,14 +322,13 @@ export default function Home(props: HomeProps) {
               >
                 3
               </Text>
-              <Box
-                fontFamily="Roboto"
-                fontStyle="normal"
-                fontWeight="normal"
-                color="#474544"
-              >
-                <Text fontSize="18px" lineHeight="21px" mb="14px">Entender a Si Mesmo</Text>
-                <Text fontSize="14px" lineHeight="16px" w="300px">Descobrir como lidar com seus problemas e tomar a decisão certa.</Text>
+              <Box fontFamily="Roboto" fontStyle="normal" fontWeight="normal" color="#474544">
+                <Text fontSize="18px" lineHeight="21px" mb="14px">
+                  Entender a Si Mesmo
+                </Text>
+                <Text fontSize="14px" lineHeight="16px" w="300px">
+                  Descobrir como lidar com seus problemas e tomar a decisão certa.
+                </Text>
               </Box>
             </Flex>
           </Box>
@@ -401,10 +342,7 @@ export default function Home(props: HomeProps) {
             transform="rotate(-10deg)"
             alt="component_2"
           />
-          <Box
-            mt="60px"
-
-          >
+          <Box mt="60px">
             <Flex>
               <Text
                 fontFamily="Cormorant Garamond"
@@ -418,19 +356,16 @@ export default function Home(props: HomeProps) {
               >
                 4
               </Text>
-              <Box
-                fontFamily="Roboto"
-                fontStyle="normal"
-                fontWeight="normal"
-                color="#474544"
-              >
-                <Text fontSize="18px" lineHeight="21px" mb="14px">Ser Feliz</Text>
-                <Text fontSize="14px" lineHeight="16px" w="300px">Descobrir o que esta faltando para a felicidade, e como começar.</Text>
+              <Box fontFamily="Roboto" fontStyle="normal" fontWeight="normal" color="#474544">
+                <Text fontSize="18px" lineHeight="21px" mb="14px">
+                  Ser Feliz
+                </Text>
+                <Text fontSize="14px" lineHeight="16px" w="300px">
+                  Descobrir o que esta faltando para a felicidade, e como começar.
+                </Text>
               </Box>
             </Flex>
-            <Flex
-              mt="35px"
-            >
+            <Flex mt="35px">
               <Text
                 fontFamily="Cormorant Garamond"
                 fontSize="72px"
@@ -443,19 +378,16 @@ export default function Home(props: HomeProps) {
               >
                 5
               </Text>
-              <Box
-                fontFamily="Roboto"
-                fontStyle="normal"
-                fontWeight="normal"
-                color="#474544"
-              >
-                <Text fontSize="18px" lineHeight="21px" mb="14px">Terapia</Text>
-                <Text fontSize="14px" lineHeight="16px" w="300px">Reescrever sua configuração, trabalhando seus medos e traumas.</Text>
+              <Box fontFamily="Roboto" fontStyle="normal" fontWeight="normal" color="#474544">
+                <Text fontSize="18px" lineHeight="21px" mb="14px">
+                  Terapia
+                </Text>
+                <Text fontSize="14px" lineHeight="16px" w="300px">
+                  Reescrever sua configuração, trabalhando seus medos e traumas.
+                </Text>
               </Box>
             </Flex>
-            <Flex
-              mt="35px"
-            >
+            <Flex mt="35px">
               <Text
                 fontFamily="Cormorant Garamond"
                 fontSize="72px"
@@ -468,14 +400,13 @@ export default function Home(props: HomeProps) {
               >
                 6
               </Text>
-              <Box
-                fontFamily="Roboto"
-                fontStyle="normal"
-                fontWeight="normal"
-                color="#474544"
-              >
-                <Text fontSize="18px" lineHeight="21px" mb="14px">Falar</Text>
-                <Text fontSize="14px" lineHeight="16px" w="300px">Abrir-se para um profissional que irá escutar o que você diz sem medo de julgamentos.</Text>
+              <Box fontFamily="Roboto" fontStyle="normal" fontWeight="normal" color="#474544">
+                <Text fontSize="18px" lineHeight="21px" mb="14px">
+                  Falar
+                </Text>
+                <Text fontSize="14px" lineHeight="16px" w="300px">
+                  Abrir-se para um profissional que irá escutar o que você diz sem medo de julgamentos.
+                </Text>
               </Box>
             </Flex>
           </Box>
@@ -489,13 +420,8 @@ export default function Home(props: HomeProps) {
         h="750px"
         w="full"
       >
-        <Box
-          w="1110px"
-          mx="auto"
-        >
-          <Box
-            ml="120px"
-          >
+        <Box w="1110px" mx="auto">
+          <Box ml="120px">
             <Heading
               as="h2"
               fontFamily="Cormorant Garamond"
@@ -504,30 +430,15 @@ export default function Home(props: HomeProps) {
               lineHeight="44px"
               color="#474544;"
               mt="28px"
-
             >
               Últimas postagens
             </Heading>
-            <Image
-              src="line.png"
-              w="280px"
-              h="1px"
-              mt="10px"
-              alt="line"
-            />
+            <Image src="line.png" w="280px" h="1px" mt="10px" alt="line" />
           </Box>
-          <Flex
-            mt="20px"
-            w="1110px"
-            justifyContent="space-between"
-          >
+          <Flex mt="20px" w="1110px" justifyContent="space-between">
             {cards}
           </Flex>
-          <Box
-            w="185px"
-            h="185px"
-            mx="auto"
-          >
+          <Box w="185px" h="185px" mx="auto">
             <Button
               mt="15px"
               mx="auto"

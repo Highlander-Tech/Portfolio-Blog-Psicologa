@@ -1,6 +1,7 @@
-import Head from 'next/head'
+import { ChakraProvider } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
-import { ChakraProvider } from "@chakra-ui/react"
+import Head from 'next/head'
+
 import Layout from '../components/Layout'
 
 function App({ Component, pageProps }: AppProps) {

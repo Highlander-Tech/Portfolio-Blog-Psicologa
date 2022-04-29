@@ -1,10 +1,5 @@
-import { Flex, Link, Image, Heading, Text, Button, Box, UnorderedList, ListItem } from "@chakra-ui/react"
+import { Box, Button, Flex, Heading, Image, Link, ListItem, Text, UnorderedList } from '@chakra-ui/react'
 
 export default function Contato() {
-
-return(
-      <Box>
-          Contato
-      </Box>
-)
+  return <Box>Contato</Box>
 }
