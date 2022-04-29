@@ -1,0 +1,16 @@
+{
+  "id": "nlog",
+  "label": "Blog",
+  "repeatable": false,
+  "status": false,
+  "json": {
+    "Main": {
+      "sobre": {
+        "type": "Text",
+        "config": {
+          "label": "Sobre"
+        }
+      }
+    }
+  }
+}

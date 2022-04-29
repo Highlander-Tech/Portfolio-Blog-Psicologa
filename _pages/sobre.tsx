@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import { GetStaticProps } from 'next'
 import { RichText } from 'prismic-dom'
 
-import { getPrismicClient } from '../services/prismic'
+import { getPrismicClient } from '../src/services/prismic'
 
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient()

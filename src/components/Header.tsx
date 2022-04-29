@@ -1,26 +1,26 @@
-import { Box, Flex, Link } from '@chakra-ui/react'
+import { Box, HStack, Link } from '@chakra-ui/react'
 
-export default function Header() {
+import { theme } from '../styles'
+
+const brown = theme.colors.brown
+
+export function Header() {
   return (
-    <Box w="full" h="70px" borderBottom="1px solid #474544">
-      <Box w="1210px" mx="auto">
-        <Flex
-          justifyContent="space-between"
-          w="445px"
-          pt="30px"
+    <Box as="header" w="full" borderBottom={`1px solid ${brown}`}>
+      <Box w="70%" mx="auto" p="25">
+        <HStack
+          as="nav"
+          spacing={35}
           textTransform="uppercase"
           fontFamily="Cormorant Garamond"
-          fontSize="24px"
-          fontStyle="normal"
-          fontWeight="normal"
-          lineHeight="29px"
-          color="#474544"
+          fontSize="2xl"
+          color="brown.700"
         >
           <Link href="/">Início</Link>
           <Link href="/sobre">Sobre</Link>
           <Link href="/blog">Blog</Link>
           <Link href="/contato">Contato</Link>
-        </Flex>
+        </HStack>
       </Box>
     </Box>
   )

@@ -4,10 +4,10 @@ import { Box, Button, Flex, Text } from '@chakra-ui/react'
 import Prismic from '@prismicio/client'
 import { GetStaticProps } from 'next'
 
-import Card from '../../components/Card'
-import Sobre from '../../components/Sobre'
-import { getPosts } from '../../services/posts'
-import { getPrismicClient } from '../../services/prismic'
+import Card from '../../src/components/Card'
+import Sobre from '../../src/components/Sobre'
+import { getPosts } from '../../src/services/posts'
+import { getPrismicClient } from '../../src/services/prismic'
 
 export const getStaticProps: GetStaticProps = async () => {
   const prismic = getPrismicClient()
