@@ -1,8 +1,13 @@
 import { Box, Flex, ListItem, Text, UnorderedList, useBreakpointValue, VStack } from '@chakra-ui/react'
+import dynamic from 'next/dynamic'
 
-import { AgendeButton, Photo, Title } from '../../components/Home'
+import type { AgendeButtonProps } from '../../components'
+import { Photo, Title } from '../../components/Home'
 import { theme } from '../../styles'
 
+const AgendeButton = dynamic<AgendeButtonProps>(() =>
+  import('../../components/AgendeButton').then((module) => module.AgendeButton),
+)
 const brown = theme.colors.brown[700]
 
 export function Presentation() {
@@ -12,13 +17,20 @@ export function Presentation() {
   })
 
   return (
-    <Flex as="section" flexDirection={['column-reverse', 'row']} alignItems="center">
+    <Flex
+      as="section"
+      flexDirection={['column-reverse', 'row']}
+      alignItems="center"
+      py="30px"
+      w={['95%', '70%']}
+      mx="auto"
+    >
       <Photo />
       <Box as="article" mx={['auto', '30px']}>
         <Title text="Monique Batista" />
         <VStack spacing="18px" align="left">
           <UnorderedList fontSize="lg">
-            <ListItem>Psicológa</ListItem>
+            <ListItem>Psicóloga</ListItem>
             <ListItem>Psicanalista</ListItem>
             <ListItem>Avaliação Psicológica</ListItem>
           </UnorderedList>
