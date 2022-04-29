@@ -18,6 +18,8 @@ export const theme = extendTheme({
   styles: {
     global: {
       body: {
+        margin: 0,
+        overflowX: 'hidden',
         bgColor: 'beige.100',
         color: 'brown.700',
       },

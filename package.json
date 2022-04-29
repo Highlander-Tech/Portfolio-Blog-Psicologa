@@ -19,6 +19,7 @@
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@fontsource/cookie": "^4.5.7",
     "@fontsource/cormorant-garamond": "^4.5.7",
     "@fontsource/roboto": "^4.5.5",
     "axios": "^0.27.2",

@@ -2,7 +2,7 @@ import { Box, HStack, Link } from '@chakra-ui/react'
 
 import { theme } from '../styles'
 
-const brown = theme.colors.brown
+const brown = theme.colors.brown[700]
 
 export function Header() {
   return (
