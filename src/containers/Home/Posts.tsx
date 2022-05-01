@@ -1,4 +1,4 @@
-import { Box, Flex, Heading } from '@chakra-ui/react'
+import { Box, Flex, Heading, useBreakpointValue } from '@chakra-ui/react'
 
 import { Card, NavButton } from '../../components/Home'
 import { theme } from '../../styles'
@@ -6,8 +6,21 @@ import { theme } from '../../styles'
 const brown = theme.colors.brown[700]
 
 export function Posts() {
+  const borderConfig = useBreakpointValue({
+    md: 'none',
+    lg: {
+      borderLeft: `250px solid ${brown}`,
+      borderBottom: '1500px solid transparent',
+    },
+    xl: {
+      borderLeft: `510px solid ${brown}`,
+      borderBottom: '1000px solid transparent',
+    },
+  })
+
   return (
-    <Box as="section" w="full" borderY={`2px solid ${brown}`}>
+    <Box as="section" w="full" borderY={`2px solid ${brown}`} position="relative">
+      <Box h="100%" position="absolute" zIndex={0} {...borderConfig} />
       <Box as="article" mx="auto" w={['95%', '75%']} py="30px">
         <Box w="270px" ml={['0', '20%']} borderBottom={`2px solid ${brown}`}>
           <Heading

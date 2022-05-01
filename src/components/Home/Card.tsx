@@ -10,7 +10,7 @@ interface PropsCard {
 
 export function Card({ title, content, banner, updateAt, id }: PropsCard) {
   return (
-    <Flex w="350px" bgColor="beige.200" direction="column">
+    <Flex w="350px" bgColor="beige.200" direction="column" zIndex={1800}>
       <Image h="250px" src={banner} alt={title} />
       <VStack spacing={'5px'} alignItems="left" w="90%" mx="auto" mt="10px">
         <Text fontSize="md" color="brown.700">
