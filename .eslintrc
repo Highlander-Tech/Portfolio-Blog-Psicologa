@@ -1,9 +1,20 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "jest": true,
+    "node": true
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier", "plugin:@next/next/recommended"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "plugin:@next/next/recommended",
+    "airbnb",
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaFeatures": {
@@ -12,10 +23,13 @@
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["react", "@typescript-eslint", "prettier", "simple-import-sort"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier", "simple-import-sort"],
   "settings": {
     "import/resolver": {
       "typescript": {},
+      "react": {
+        "version": "detect"
+      },
       "node": {
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
