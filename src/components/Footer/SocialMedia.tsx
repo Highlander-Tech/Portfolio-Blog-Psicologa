@@ -18,6 +18,7 @@ export function SocialMedia({ instagram, facebook, whatsapp }: Props) {
   return (
     <Stack
       w="220px"
+      h={['190px', '410px']}
       pl={['0', '20px']}
       direction="column"
       spacing="20px"

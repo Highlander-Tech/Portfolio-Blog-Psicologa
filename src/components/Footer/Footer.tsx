@@ -21,7 +21,7 @@ export function Footer() {
 
   return (
     <Box as="footer" w="100%" position="relative" py="40px" zIndex={1800} backgroundColor="beige.100">
-      <Flex w={['95%', '70%']} mx="auto" pt="10" flexDir={['column-reverse', 'row']}>
+      <Flex w={['95%', '70%']} mx="auto" pt="10" flexDir={['column-reverse', 'row']} align="center">
         {isWideVersion && <Photo src="/footerImage.png" />}
         <Form />
         <SocialMedia {...contato} />
