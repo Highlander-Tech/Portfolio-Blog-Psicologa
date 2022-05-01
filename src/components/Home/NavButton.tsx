@@ -1,12 +1,27 @@
+import type { ReactNode } from 'react'
 import { Box, Button, ButtonProps } from '@chakra-ui/react'
+import { useRouter } from 'next/router'
 
 interface Props extends ButtonProps {
   border: string
+  href?: string
+  children: ReactNode
 }
 
-function AgendeButton({ border, ...rest }: Props) {
+function NavButton({ border, href, children, ...rest }: Props) {
+  const router = useRouter()
+
+  function handleClick() {
+    if (href) {
+      router.push(href)
+    } else {
+      window.scrollTo({ top: 99999, behavior: 'smooth' })
+    }
+  }
+
   return (
     <Button
+      as="div"
       w="185px"
       h="185px"
       borderRadius="50%"
@@ -20,6 +35,8 @@ function AgendeButton({ border, ...rest }: Props) {
       {...rest}
     >
       <Box
+        as="a"
+        href={href}
         h="185px"
         w="185px"
         position="absolute"
@@ -28,12 +45,12 @@ function AgendeButton({ border, ...rest }: Props) {
         ml="15px"
         mt="15px"
         filter="drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"
-        onClick={() => window.scrollTo({ top: 99999, behavior: 'smooth' })}
+        onClick={handleClick}
       />
-      Agende
+      {children}
     </Button>
   )
 }
 
-export { AgendeButton }
-export type { Props as AgendeButtonProps }
+export { NavButton }
+export type { Props as NavButtonProps }

@@ -1,12 +1,11 @@
 import { Box, Flex, ListItem, Text, UnorderedList, useBreakpointValue, VStack } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 
-import type { AgendeButtonProps } from '../../components'
-import { Photo, Title } from '../../components/Home'
+import { NavButtonProps, Photo, Title } from '../../components/Home'
 import { theme } from '../../styles'
 
-const AgendeButton = dynamic<AgendeButtonProps>(() =>
-  import('../../components/AgendeButton').then((module) => module.AgendeButton),
+const NavButton = dynamic<NavButtonProps>(() =>
+  import('../../components/Home/NavButton').then((module) => module.NavButton),
 )
 const brown = theme.colors.brown[700]
 
@@ -35,7 +34,7 @@ export function Presentation() {
             <ListItem>Avaliação Psicológica</ListItem>
           </UnorderedList>
           <Text fontSize="lg">CRP 07/29504</Text>
-          {isWideVersion && <AgendeButton border={`1px solid ${brown}`} />}
+          {isWideVersion && <NavButton border={`1px solid ${brown}`}>Agende</NavButton>}
         </VStack>
       </Box>
     </Flex>

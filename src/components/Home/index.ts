@@ -1,3 +1,5 @@
 export * from './Photo'
 export * from './Title'
 export * from './Help'
+export * from './Card'
+export * from './NavButton'

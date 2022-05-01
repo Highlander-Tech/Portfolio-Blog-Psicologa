@@ -1,11 +1,11 @@
 import { Box, Text, useBreakpointValue } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 
-import type { AgendeButtonProps } from '../../components'
+import type { NavButtonProps } from '../../components/Home'
 import { theme } from '../../styles'
 
-const AgendeButton = dynamic<AgendeButtonProps>(() =>
-  import('../../components/AgendeButton').then((module) => module.AgendeButton),
+const NavButton = dynamic<NavButtonProps>(() =>
+  import('../../components/Home/NavButton').then((module) => module.NavButton),
 )
 const beige = theme.colors.beige[100]
 
@@ -28,7 +28,11 @@ export function Description() {
         <br /> Atuo também com família e conflitos gerados desta, ajudando as famílias em um processo de
         conhecimento e restauração de laços ou de harmonia para os seus integrantes.
       </Text>
-      {isWideVersion && <AgendeButton border={`1px solid ${beige}`} ml="60%" mt="50px" />}
+      {isWideVersion && (
+        <NavButton border={`1px solid ${beige}`} ml="60%" mt="50px">
+          Agende
+        </NavButton>
+      )}
     </Box>
   )
 }

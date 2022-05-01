@@ -1,8 +1,6 @@
 import { Box, Flex, useBreakpointValue } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 
-import { theme } from '../../styles'
-
 import { Form, PhotoProps, SocialMedia } from './'
 
 const Photo = dynamic<PhotoProps>(() => import('./Photo').then((module) => module.Photo))
@@ -15,8 +13,6 @@ const contato = {
   email: 'giovani.franz@gmail.com',
 }
 
-const brown = theme.colors.brown[700]
-
 export function Footer() {
   const isWideVersion = useBreakpointValue({
     lg: false,
@@ -24,7 +20,7 @@ export function Footer() {
   })
 
   return (
-    <Box as="footer" w="100%" borderTop={`1px solid ${brown}`} position="relative" py="40px">
+    <Box as="footer" w="100%" position="relative" py="40px">
       <Flex w={['95%', '70%']} mx="auto" pt="10" flexDir={['column-reverse', 'row']}>
         {isWideVersion && <Photo src="/footerImage.png" />}
         <Form />

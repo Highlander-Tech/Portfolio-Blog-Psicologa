@@ -1,4 +1,4 @@
-import { Description, PossoAjudar, Presentation } from '../containers/Home'
+import { Description, PossoAjudar, Posts, Presentation } from '../containers/Home'
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Presentation />
       <Description />
       <PossoAjudar />
+      <Posts />
     </>
   )
 }
