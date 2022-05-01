@@ -21,7 +21,6 @@ function NavButton({ border, href, children, ...rest }: Props) {
 
   return (
     <Button
-      as="div"
       w="185px"
       h="185px"
       borderRadius="50%"

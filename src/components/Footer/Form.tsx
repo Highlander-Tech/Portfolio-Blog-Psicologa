@@ -18,7 +18,7 @@ export function Form() {
       borderTop={[`2px solid ${beige}`, 'none']}
     >
       <Title text="Contato" mb="20px" />
-      <VStack spacing="10px" fontWeight="normal" lineHeight="24px" letterSpacing="0.5px" alignItems="left">
+      <VStack spacing="10px" alignItems="left">
         <Text>Nome</Text>
         <Input bg="white" size="lg" placeholder="Nome" />
         <Text>Telefone</Text>
