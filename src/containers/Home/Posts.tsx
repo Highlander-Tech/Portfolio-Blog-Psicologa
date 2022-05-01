@@ -23,13 +23,7 @@ export function Posts() {
       <Box h="100%" position="absolute" zIndex={0} {...borderConfig} />
       <Box as="article" mx="auto" w={['95%', '75%']} py="30px">
         <Box w="270px" ml={['0', '20%']} borderBottom={`2px solid ${brown}`}>
-          <Heading
-            as="h2"
-            fontFamily="Cormorant Garamond"
-            fontSize="3xl"
-            fontWeight="bold"
-            color="brown.700;"
-          >
+          <Heading as="h2" fontSize="3xl" fontWeight="bold" color="brown.700;">
             Últimas postagens
           </Heading>
         </Box>

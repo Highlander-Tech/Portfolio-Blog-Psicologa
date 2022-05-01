@@ -20,7 +20,8 @@ export function Description() {
       <Text w={['95%', '50%']} mx="auto" fontSize="lg" color="beige.100" textAlign="center">
         A busca pela sua própria identificação na adolescência é uma tarefa incessante, e para tal, pode-se
         contar com o auxílio da terapia, posso te ajudar com a minha experiencia em clínica e agora levando
-        isso para o on line. <br />
+        isso para o on line.
+        <br />
         <br />
         Se você está sentindo-se perdido e sem propósito, pode contar comigo para te ajudar a compreender que
         tuas dúvidas e inquietações fazem parte deste processo da adolescência.

@@ -6,14 +6,7 @@ interface Props extends HeadingProps {
 
 export function Title({ text, ...rest }: Props) {
   return (
-    <Heading
-      as="h2"
-      fontFamily="Cormorant Garamond"
-      fontSize="3xl"
-      fontWeight="bold"
-      color="brown.700"
-      {...rest}
-    >
+    <Heading as="h2" fontSize="3xl" fontWeight="bold" color="brown.700" {...rest}>
       {text}
     </Heading>
   )

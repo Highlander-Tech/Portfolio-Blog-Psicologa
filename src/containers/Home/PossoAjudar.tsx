@@ -5,7 +5,7 @@ import { Help } from '../../components/Home'
 export function PossoAjudar() {
   return (
     <Box w={['95%', '70%']} mx="auto" py="30px">
-      <Heading as="h2" fontFamily="Cormorant Garamond" fontSize="3xl" fontWeight="bold" color="brown.700">
+      <Heading as="h2" fontSize="3xl" fontWeight="bold" color="brown.700">
         Como eu posso ajudar?
       </Heading>
       <Flex mt="35px" maxW="70%" mx="auto" justifyContent="space-evenly" direction={['column', 'row']}>
