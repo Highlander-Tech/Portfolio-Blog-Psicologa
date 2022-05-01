@@ -1,4 +1,4 @@
 export * from './Description'
-export * from './PossoAjudar'
+export * from './HelpYou'
 export * from './Posts'
 export * from './Presentation'

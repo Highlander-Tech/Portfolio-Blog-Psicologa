@@ -2,13 +2,13 @@ import { Box, Flex, Heading, VStack } from '@chakra-ui/react'
 
 import { Help } from '../../components/Home'
 
-export function PossoAjudar() {
+export function HelpYou() {
   return (
-    <Box w={['95%', '70%']} mx="auto" py="30px">
+    <Box w={['95%', '50%']} mx="auto" py="30px">
       <Heading as="h2" fontSize="3xl" fontWeight="bold" color="brown.700">
         Como eu posso ajudar?
       </Heading>
-      <Flex mt="35px" maxW="70%" mx="auto" justifyContent="space-evenly" direction={['column', 'row']}>
+      <Flex mt="35px" justifyContent="space-evenly" direction={['column', 'row']}>
         <VStack spacing="35px">
           <Help
             number={1}
