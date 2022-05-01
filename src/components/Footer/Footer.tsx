@@ -1,7 +1,7 @@
 import { Box, Flex, useBreakpointValue } from '@chakra-ui/react'
 import dynamic from 'next/dynamic'
 
-import { Form, PhotoProps, SocialMedia } from './'
+import { Form, PhotoProps, SocialMedia } from '.'
 
 const Photo = dynamic<PhotoProps>(() => import('./Photo').then((module) => module.Photo))
 const Logo = dynamic<EmptyObject>(() => import('./Logo').then((module) => module.Logo))

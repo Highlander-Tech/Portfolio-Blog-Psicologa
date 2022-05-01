@@ -44,7 +44,7 @@ function NavButton({ border, href, children, ...rest }: Props) {
         ml="15px"
         mt="15px"
         filter="drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"
-        onClick={handleClick}
+        onClick={() => handleClick}
       />
       {children}
     </Button>

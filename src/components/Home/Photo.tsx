@@ -7,14 +7,7 @@ const brown = theme.colors.brown[700]
 export function Photo() {
   return (
     <>
-      <Image
-        src="/mock.png"
-        alt={'props.name'}
-        w="310px"
-        h="500px"
-        borderRadius="180px"
-        position="relative"
-      />
+      <Image src="/mock.png" alt="props.name" w="310px" h="500px" borderRadius="180px" position="relative" />
       <Box
         mt="10px"
         ml="-10px"

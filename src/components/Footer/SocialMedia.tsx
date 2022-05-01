@@ -1,7 +1,7 @@
 import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { Stack, Text, useBreakpointValue } from '@chakra-ui/react'
 
-import { Link, Title } from './'
+import { Link, Title } from '.'
 
 interface Props {
   instagram: string
@@ -34,7 +34,7 @@ export function SocialMedia({ instagram, facebook, whatsapp }: Props) {
       {isWideVersion && (
         <>
           <Text color="beige.200" fontFamily="Cormorant Garamond" fontSize="3xl" fontWeight="bold">
-            {'&'}
+            &
           </Text>
           <Title text="Whatsapp" />
           <Link icon={FaWhatsapp} href={whatsapp} />

@@ -4,14 +4,14 @@ import NextLink from 'next/link'
 export function Logo() {
   return (
     <Box as="div" position="absolute" bottom="40px" right="20px" w="155px">
-      <NextLink href="https://www.highlandertech.com.br/" passHref>
-        <Link as="a" target="_blank" _hover={{ textDecoration: 'none' }}>
+      <Link as={NextLink} href="https://www.highlandertech.com.br/" target="_blank" passHref>
+        <Box as="a">
           <Text textAlign="right" fontSize="18px" color="brown.700">
             Desenvolvido por
-            <Image src="highlanderTechLogo.png" h="30px" />
           </Text>
-        </Link>
-      </NextLink>
+          <Image src="highlanderTechLogo.png" h="30px" />
+        </Box>
+      </Link>
     </Box>
   )
 }
