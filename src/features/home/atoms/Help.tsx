@@ -1,26 +1,27 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 
-interface Props {
+type Props = {
   number: number;
   title: string;
   description: string;
-}
+};
 
 function Help({ number, title, description }: Props) {
+  // TODO Tirar margem negativa e alinhar usando flexbox
   return (
-    <Flex>
+    <Flex h="96px">
       <Text
         fontFamily="Cormorant Garamond"
         fontSize="7xl"
         fontWeight="bold"
         color="beige.200"
-        mr="20px"
-        mt="-42px"
+        mr="24px"
+        mt="-40px"
       >
         {number}
       </Text>
-      <Box fontFamily="Roboto" color="brown" textAlign="left" w="300px">
-        <Text fontSize="lg" mb="10px">
+      <Box fontFamily="Roboto" color="brown" textAlign="left" w="304px">
+        <Text fontSize="lg" mb="8px">
           {title}
         </Text>
         <Text fontSize="md">{description}</Text>

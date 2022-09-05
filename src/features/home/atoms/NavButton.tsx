@@ -1,34 +1,20 @@
-import type { PropsWithChildren } from 'react';
+import type { MouseEvent } from 'react';
+import { useCallback } from 'react';
 import { Box, Button, ButtonProps } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
 
-type Props = PropsWithChildren<
-  {
-    border: string;
-    href?: string;
-  } & ButtonProps
->;
-
-function NavButton({
-  border,
-  href,
-  children,
-  ...rest
-}: PropsWithChildren<Props>) {
-  const router = useRouter();
-
-  function handleClick() {
-    if (href) {
-      router.push(href);
-    } else {
+function NavButton({ border, borderColor, ...rest }: ButtonProps) {
+  const handleClick = useCallback(
+    (event: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>) => {
+      event.preventDefault();
       window.scrollTo({ top: 99999, behavior: 'smooth' });
-    }
-  }
+    },
+    [],
+  );
 
   return (
     <Button
-      w="185px"
-      h="185px"
+      w="184px"
+      h="184px"
       borderRadius="50%"
       bgColor="beige.200"
       fontFamily="Cormorant Garamond"
@@ -38,24 +24,24 @@ function NavButton({
       transform="rotate(-10deg)"
       position="relative"
       {...rest}
+      onClick={(event) => handleClick(event)}
     >
       <Box
-        as="a"
-        href={href}
-        h="185px"
-        w="185px"
+        as="button"
+        h="184px"
+        w="184px"
         position="absolute"
         border={border}
+        borderColor={borderColor}
         borderRadius="50%"
-        ml="15px"
-        mt="15px"
+        left="8px"
+        top="8px"
         filter="drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"
-        onClick={() => handleClick}
       />
-      {children}
+      Agende
     </Button>
   );
 }
 
 export { NavButton };
-export type { Props as NavButtonProps };
+export type { ButtonProps as NavButtonProps };

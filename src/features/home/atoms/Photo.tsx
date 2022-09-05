@@ -1,27 +1,27 @@
 import { Box, Image } from '@chakra-ui/react';
+// import Image from 'next/image';
 
 export function Photo() {
   return (
-    <>
+    <Box position="relative" display="block" maxW="312px" w={11 / 12} h="504px">
       <Image
         src="/mock.png"
-        alt="props.name"
-        w="310px"
-        h="500px"
-        borderRadius="180px"
-        position="relative"
+        alt="props.name" // TODO: puxar dados do CMS
+        width={310}
+        height={500}
+        rounded="180px"
       />
       <Box
-        mt="10px"
-        ml="-10px"
         w="310px"
         h="490px"
+        rounded="180px"
         border="1px"
         borderColor="brown"
-        borderRadius="180px"
         position="absolute"
-        zIndex={1800}
+        zIndex={50}
+        top="10px"
+        left="-10px"
       />
-    </>
+    </Box>
   );
 }
