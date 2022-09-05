@@ -29,7 +29,7 @@ export function Presentation() {
         display="flex"
         flexDirection={['column-reverse', 'row']}
         alignItems="center"
-        gap="40px"
+        gap="32px"
         py="32px"
         w={11 / 12}
         maxW="1160px"

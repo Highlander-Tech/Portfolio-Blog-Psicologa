@@ -11,10 +11,10 @@ type Props = {
 function Link({ icon, href }: Props) {
   return (
     <NextLink href={href} passHref>
-      <ChakraLink as="a" target="_blank">
+      <ChakraLink as="a" target="_blank" rel="noreferrer">
         <Icon
           as={icon}
-          fontSize="35px"
+          fontSize="36px"
           color="brown"
           _hover={{ color: 'beige.200' }}
         />

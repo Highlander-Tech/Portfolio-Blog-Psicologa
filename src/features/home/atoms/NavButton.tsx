@@ -15,7 +15,7 @@ function NavButton({ border, borderColor, ...rest }: ButtonProps) {
     <Button
       w="184px"
       h="184px"
-      borderRadius="50%"
+      rounded="full"
       bgColor="beige.200"
       fontFamily="Cormorant Garamond"
       fontSize="3xl"
@@ -33,7 +33,7 @@ function NavButton({ border, borderColor, ...rest }: ButtonProps) {
         position="absolute"
         border={border}
         borderColor={borderColor}
-        borderRadius="50%"
+        rounded="full"
         left="8px"
         top="8px"
         filter="drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25))"
