@@ -1,4 +1,5 @@
-import { Box, Image } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
+import Image from 'next/image';
 
 interface Props {
   src: string;
@@ -6,14 +7,14 @@ interface Props {
 
 function Photo({ src }: Props) {
   return (
-    <>
+    <Box position="relative" mt="-24px">
       <Image
         src={src}
-        w="300"
-        h="400"
-        position="relative"
-        mt="-25px"
+        width={300}
+        height={400}
         alt="foto ilustrativa"
+        priority={false}
+        loading="lazy"
       />
       <Box
         w="310px"
@@ -21,11 +22,11 @@ function Photo({ src }: Props) {
         border="1px"
         borderColor="beige.200"
         position="absolute"
-        mt="-65px"
-        ml="10px"
+        top="-16px"
+        left="8px"
         zIndex={1800}
       />
-    </>
+    </Box>
   );
 }
 

@@ -1,8 +1,9 @@
-import { Heading, HeadingProps } from '@chakra-ui/react';
+import type { HeadingProps } from '@chakra-ui/react';
+import { Heading } from '@chakra-ui/react';
 
-interface Props extends HeadingProps {
+type Props = {
   text: string;
-}
+} & HeadingProps;
 
 export function Title({ text, ...rest }: Props) {
   return (

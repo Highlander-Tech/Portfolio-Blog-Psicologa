@@ -1,11 +1,12 @@
 import type { ElementType } from 'react';
-import { Icon, Link as ChakraLink, LinkProps } from '@chakra-ui/react';
+import type { LinkProps } from '@chakra-ui/react';
+import { Icon, Link as ChakraLink } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
-interface Props extends LinkProps {
+type Props = {
   icon: ElementType;
   href: string;
-}
+} & LinkProps;
 
 function Link({ icon, href }: Props) {
   return (
