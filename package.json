@@ -5,54 +5,44 @@
   "author": "Giovani Franz",
   "description": "Blog pessoal Monique Batista",
   "engines": {
-    "node": "14.x"
+    "node": "16.x"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint src --max-warnings=0",
-    "clean": "rm -rf .next",
+    "analyzer": "ANALYZE=true next build",
+    "lint": "eslint src/**/*.{ts,tsx} --max-warnings=0 --fix",
+    "format": "prettier --write src/**/*.{ts,tsx}",
+    "clean": "rimraf .next",
     "prepare": "husky install"
   },
   "dependencies": {
-    "@chakra-ui/react": "^1.8.8",
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@fontsource/cookie": "^4.5.7",
-    "@fontsource/cormorant-garamond": "^4.5.7",
-    "@fontsource/roboto": "^4.5.5",
-    "axios": "^0.27.2",
-    "formik": "^2.2.9",
-    "framer-motion": "^6.3.3",
-    "next": "12.1.5",
-    "react": "18.1.0",
-    "react-dom": "18.1.0",
-    "react-icons": "^4.3.1"
+    "@chakra-ui/react": "^2.3.1",
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@highlandertech/eslint-config": "^2.0.6",
+    "framer-motion": "^7.2.1",
+    "next": "12.2.5",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
-    "@types/node": "^17.0.30",
-    "@types/react": "18.0.8",
-    "@typescript-eslint/eslint-plugin": "^5.21.0",
-    "@typescript-eslint/parser": "^5.21.0",
-    "eslint": "^8.14.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-import-resolver-typescript": "^2.7.1",
-    "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsx-a11y": "^6.5.1",
-    "eslint-config-next": "12.1.5",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.5.0",
-    "eslint-plugin-simple-import-sort": "^7.0.0",
-    "husky": "^7.0.4",
-    "lint-staged": "^12.4.1",
-    "prettier": "^2.6.2",
-    "typescript": "4.6.4"
+    "@next/bundle-analyzer": "^12.2.5",
+    "@types/node": "^18.7.14",
+    "@types/react": "18.0.18",
+    "eslint": "^8.23.0",
+    "eslint-config-next": "^12.2.5",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
+    "typescript": "4.8.2"
   },
   "lint-staged": {
     "*.{ts,js}": [
+      "npm run format",
       "npm run lint"
     ]
   }

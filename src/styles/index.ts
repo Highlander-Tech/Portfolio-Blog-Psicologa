@@ -1,4 +1,4 @@
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
 
 export const theme = extendTheme({
   colors: {
@@ -6,9 +6,7 @@ export const theme = extendTheme({
       100: '#F8F1F1',
       200: '#E9CBBB',
     },
-    brown: {
-      700: '#474544',
-    },
+    brown: '#474544',
   },
   fonts: {
     heading: 'Cormorant Garamond',
@@ -21,8 +19,8 @@ export const theme = extendTheme({
         margin: 0,
         overflowX: 'hidden',
         bgColor: 'beige.100',
-        color: 'brown.700',
+        color: 'brown',
       },
     },
   },
-})
+});

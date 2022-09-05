@@ -1,12 +1,3 @@
-import { Description, HelpYou, Posts, Presentation } from '../containers/Home'
+import Home from '../features/home/Template';
 
-export default function Home() {
-  return (
-    <>
-      <Presentation />
-      <Description />
-      <HelpYou />
-      <Posts />
-    </>
-  )
-}
+export default Home;

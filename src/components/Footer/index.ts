@@ -1,7 +1,0 @@
-export * from './Footer'
-export * from './Form'
-export * from './Link'
-export * from './Logo'
-export * from './Photo'
-export * from './SocialMedia'
-export * from './Title'

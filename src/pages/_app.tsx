@@ -1,27 +1,16 @@
-import { ChakraProvider } from '@chakra-ui/react'
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
+import { ChakraProvider } from '@chakra-ui/react';
+import { Layout } from 'features/common/components/template/Layout';
+import type { AppProps } from 'next/app';
 
-import '@fontsource/cookie'
-
-import { Footer, Header } from '../components'
-import { theme } from '../styles'
-
-import '@fontsource/roboto/400.css'
-import '@fontsource/roboto/700.css'
-import '@fontsource/cormorant-garamond/400.css'
-import '@fontsource/cormorant-garamond/700.css'
+import { theme } from '../styles';
 
 function App({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider theme={theme}>
-      <Head>
-        <title>Monique Batista</title>
-      </Head>
-      <Header />
-      <Component {...pageProps} />
-      <Footer />
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </ChakraProvider>
-  )
+  );
 }
-export default App
+export default App;
