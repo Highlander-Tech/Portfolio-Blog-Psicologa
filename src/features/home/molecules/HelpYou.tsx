@@ -5,16 +5,16 @@ import { Help } from '../atoms';
 export function HelpYou() {
   return (
     <Box as="section" w="full">
-      <Container w={11 / 12} maxW="1160px" py="40px">
+      <Container w={11 / 12} maxW="1164px" py="40px">
         <Heading as="h2" fontSize="3xl" fontWeight="bold" color="brown">
           Como eu posso ajudar?
         </Heading>
         <Flex
-          mt="35px"
+          mt="32px"
           justifyContent="space-evenly"
           direction={['column', 'row']}
         >
-          <VStack spacing="35px">
+          <VStack spacing="32px">
             <Help
               number={1}
               title="Identificar"
@@ -31,8 +31,8 @@ export function HelpYou() {
               description="Descobrir como lidar com seus problemas e tomar a decisão certa."
             />
           </VStack>
-          <Box mt={['35px', '60px']}>
-            <VStack spacing="35px">
+          <Box mt={['32px', '64px']}>
+            <VStack spacing="32px">
               <Help
                 number={4}
                 title="Ser Feliz"

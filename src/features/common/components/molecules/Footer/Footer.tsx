@@ -1,4 +1,4 @@
-import { Box, Flex, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Container, useBreakpointValue } from '@chakra-ui/react';
 import dynamic from 'next/dynamic';
 
 import { Form } from './Form';
@@ -28,24 +28,27 @@ export function Footer() {
   return (
     <Box
       as="footer"
-      w="100%"
+      w="full"
       position="relative"
       py="40px"
-      zIndex={1800}
+      zIndex={100}
       backgroundColor="beige.100"
     >
-      <Flex
-        w={['95%', '70%']}
-        mx="auto"
-        pt="10"
-        flexDir={['column-reverse', 'row']}
-        align="center"
+      <Container
+        display="flex"
+        flexDirection={['column-reverse', 'row']}
+        alignItems="center"
+        pt={10}
+        w={11 / 12}
+        maxW="1160px"
       >
-        {isWideVersion && <Photo src="/footerImage.png" />}
+        {isWideVersion && <Photo src="/footer/banner.png" />}
         <Form />
         <SocialMedia {...contato} />
-      </Flex>
-      {isWideVersion && <Logo />}
+      </Container>
+      <Box position="absolute" right={5} height="80px">
+        {isWideVersion && <Logo />}
+      </Box>
     </Box>
   );
 }

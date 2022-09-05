@@ -17,7 +17,7 @@ export function Posts() {
             Últimas postagens
           </Heading>
         </Box>
-        <Flex my="20px" gap="30px" flexWrap="wrap" justifyContent="center">
+        <Flex my="32px" gap="32px" flexWrap="wrap" justifyContent="center">
           <Card
             banner="/mock.png"
             id="1"
@@ -41,7 +41,7 @@ export function Posts() {
           />
         </Flex>
         <Flex align="center" direction="column">
-          <RedirectButton href="/blog" mt="32px" />
+          <RedirectButton href="/blog" />
         </Flex>
       </Container>
     </Box>

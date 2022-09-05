@@ -3,11 +3,11 @@ import { Stack, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import { Link, Title } from '../../atoms';
 
-interface Props {
+type Props = {
   instagram: string;
   facebook: string;
   whatsapp: string;
-}
+};
 
 export function SocialMedia({ instagram, facebook, whatsapp }: Props) {
   const isWideVersion = useBreakpointValue({
@@ -18,12 +18,12 @@ export function SocialMedia({ instagram, facebook, whatsapp }: Props) {
   return (
     <Stack
       w="220px"
-      h={['190px', '410px']}
-      pl={['0', '20px']}
+      h={['192px', '408px']}
+      pl={['0', '24px']}
       direction="column"
-      spacing="20px"
+      spacing="24px"
       mx={['auto', '0']}
-      pb={['20px', 'auto']}
+      pb={['24px', 'auto']}
     >
       <Title text="Redes Sociais" textAlign={['center', 'left']} />
       <Stack direction="row" spacing={3} justifyContent={['center', 'left']}>

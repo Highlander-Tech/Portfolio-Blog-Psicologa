@@ -1,4 +1,5 @@
-import { Flex, Image, Link, Text, VStack } from '@chakra-ui/react';
+import { Flex, Link, Text, VStack } from '@chakra-ui/react';
+import Image from 'next/image';
 
 interface PropsCard {
   title: string;
@@ -10,8 +11,21 @@ interface PropsCard {
 
 export function Card({ title, content, banner, updateAt, id }: PropsCard) {
   return (
-    <Flex w="344px" bgColor="beige.200" direction="column" zIndex={1800}>
-      <Image h="250px" src={banner} alt={title} />
+    <Flex
+      w={11 / 12}
+      maxW="344px"
+      bgColor="beige.200"
+      direction="column"
+      zIndex={50}
+    >
+      <Image
+        height="250"
+        width={344}
+        src={banner}
+        alt={title}
+        priority={false}
+        loading="lazy"
+      />
       <VStack spacing={1} alignItems="left" w={11 / 12} mx="auto" mt="8px">
         <Text as="time" dateTime={updateAt} fontSize="md" color="brown">
           Publicado em: {updateAt}

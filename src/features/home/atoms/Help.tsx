@@ -7,21 +7,20 @@ type Props = {
 };
 
 function Help({ number, title, description }: Props) {
-  // TODO Tirar margem negativa e alinhar usando flexbox
   return (
-    <Flex h="96px">
+    <Flex h="96px" w={11 / 12} maxW="400px" gap={5} alignItems="start">
       <Text
+        as="span"
         fontFamily="Cormorant Garamond"
         fontSize="7xl"
+        lineHeight={0.25}
         fontWeight="bold"
         color="beige.200"
-        mr="24px"
-        mt="-40px"
       >
         {number}
       </Text>
-      <Box fontFamily="Roboto" color="brown" textAlign="left" w="304px">
-        <Text fontSize="lg" mb="8px">
+      <Box w="304px">
+        <Text as="span" fontSize="lg" mb={1}>
           {title}
         </Text>
         <Text fontSize="md">{description}</Text>
