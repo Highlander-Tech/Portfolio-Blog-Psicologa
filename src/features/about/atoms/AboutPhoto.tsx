@@ -13,6 +13,8 @@ function AboutPhoto({ src }: Props) {
         zIndex={-1}
         borderTopRadius="150px"
         overflow="hidden"
+        w="250px"
+        h="450px"
       >
         <Image
           src={src}
@@ -21,7 +23,7 @@ function AboutPhoto({ src }: Props) {
           alt="foto ilustrativa"
           priority={false}
           loading="lazy"
-          objectFit="fill"
+          objectFit="cover"
         />
       </Box>
       <Box
@@ -30,8 +32,8 @@ function AboutPhoto({ src }: Props) {
         top="5px"
         right="-5px"
         borderColor="beige.200"
-        w="100%"
-        h="100%"
+        w="250px"
+        h="450px"
         borderTopRadius="150px"
         boxShadow="md"
         zIndex="banner"
