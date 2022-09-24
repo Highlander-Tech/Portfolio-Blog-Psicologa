@@ -5,7 +5,7 @@ import { OccupationBox } from '../atoms/OccupationBox';
 
 function Occupations() {
   return (
-    <Box>
+    <Box w="100%">
       <Text mb="29px" fontSize="2xl" fontFamily="Cormorant Garamond">
         Áreas de Atuação:
       </Text>

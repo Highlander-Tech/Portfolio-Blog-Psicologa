@@ -4,7 +4,7 @@ import { Title } from 'features/common/components/atoms';
 
 function AboutMe() {
   return (
-    <Box ml="15px" maxW="847px">
+    <Box w="100%">
       <Title text="Sobre mim:" mb="16px" />
       <Text mb="21px">
         Psicóloga formada pela Universidade Luterana do Brasil, com ênfase em
